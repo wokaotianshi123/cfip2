@@ -27,9 +27,11 @@ jobs:
     
     - name: Get source data
       run: |
-        wget -N $downloadurl -O ip.zip
+        wget -N -t 1 -nd -np -npH -e 'timestamping=off' "${{ env.downloadurl }}" -O ip.zip
         unzip ip.zip -d ./ips
         rm ip.zip
+        shell: /usr/bin/bash -e {0}
+
 
     - name: Set up Python
       uses: actions/setup-python@main
