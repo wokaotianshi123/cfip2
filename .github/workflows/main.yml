@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '00 2 * * *'
 
-# on: [push]
+  workflow_dispatch: # 允许手动触发
 
 env:
   # Setting an environment variable with the value of a configuration variable
