@@ -7,7 +7,7 @@ on:
   workflow_dispatch: # 允许手动触发
 
 env:
-  downloadurl: ${{secrets.NEW_DOWNLOAD_URL}}
+  downloadurl: ${{var.downloadurl}}
 
 permissions:
   contents: write
