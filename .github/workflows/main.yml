@@ -8,7 +8,7 @@ on:
 
 env:
   # Setting an environment variable with the value of a configuration variable
-  downloadurl: ${{ secret.DOWNLOADURL }}
+  downloadurl: https://zip.baipiao.eu.org/
 
 permissions:
   contents: write
