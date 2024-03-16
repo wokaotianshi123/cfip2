@@ -6,13 +6,9 @@ on:
 
   workflow_dispatch: # 允许手动触发
 
-env:
-  # Setting an environment variable with the value of a configuration variable
-  downloadurl: ${{ vars.DOWNLOADURL }}
-
 permissions:
   contents: write
-      
+
 jobs:
   update_data:
     runs-on: ubuntu-latest
@@ -28,7 +24,7 @@ jobs:
     
     - name: Get source data
       run: |
-        wget -N $downloadurl -O ip.zip
+        wget -N -t 1 -nd -np -npH -e 'timestamping=off' "${{ secrets.DOWNLOAD_URL }}" -O ip.zip
         unzip ip.zip -d ./ips
         rm ip.zip
 
