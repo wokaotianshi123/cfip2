@@ -7,8 +7,7 @@ on:
   workflow_dispatch: # 允许手动触发
 
 env:
-  # Setting an environment variable with the value of a configuration variable
-  downloadurl: https://zip.baipiao.eu.org/
+  downloadurl: ${{ secrets.NEW_DOWNLOAD_URL }}
 
 permissions:
   contents: write
